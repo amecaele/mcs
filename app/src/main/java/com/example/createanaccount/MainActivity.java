@@ -3,6 +3,7 @@ package com.example.createanaccount;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.EmailAuthCredential;
-
 import java.util.regex.Pattern;
-
-import static android.os.Build.VERSION_CODES.O;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,23 +32,35 @@ public class MainActivity extends AppCompatActivity {
         next = findViewById(R.id.textsize);
         // button is listening or waiting for instruction
 
+
+
+
+//        password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if (password.getText().toString() < 8) {
+//                    return;
+//                }
+//                password.setText("khg");
+//            }
+//        });
+
+
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!eChecker(email.getText().toString())){
                     Toast.makeText(MainActivity.this, "wrong email", Toast.LENGTH_LONG).show();
                 }
+                else if (emptyChecker()){
+                    Toast.makeText(MainActivity.this, "Can not leave blank box.", Toast.LENGTH_LONG).show();
+                }
+                else if (!passwordMatchChecker(password, repeatPass)){
+                    Toast.makeText(MainActivity.this, "please use same password", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     startActivity(new Intent(MainActivity.this, AndroidAssign1.class));
-                }
-                if (!bChecker()){
-                    Toast.makeText(getApplicationContext(), "check all boxes again.", Toast.LENGTH_LONG).show();
-                }
-                else if (!eChecker(email.getText().toString())){
-                    Toast.makeText(MainActivity.this, "insert valid email", Toast.LENGTH_SHORT).show();
-                }
-                else if (!pCheker(password, repeatPass)){
-                    Toast.makeText(MainActivity.this, "please inserte same password", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -71,12 +80,12 @@ public class MainActivity extends AppCompatActivity {
         return pat.matcher(email).matches();
     }
 
-    public boolean pCheker(TextView p1, TextView p2) {
+    public boolean passwordMatchChecker(TextView p1, TextView p2) {
         if (p1.getText().toString().equals(p2.getText().toString())) return true;
         else return false;
     }
 
-    public boolean bChecker() {
+    public boolean emptyChecker() {
         if (email.getText().toString().isEmpty()
                 || password.getText().toString().isEmpty()
                 || repeatPass.getText().toString().isEmpty()) ;

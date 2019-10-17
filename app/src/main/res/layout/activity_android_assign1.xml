@@ -4,6 +4,201 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FA131212"
+    android:backgroundTint="#FD0F0F0F"
     tools:context=".AndroidAssign1">
+
+    <EditText
+        android:id="@+id/editTextPostalAdd"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        android:background="#FCFFFFFF"
+        android:ems="15"
+        android:hint="Postal Address"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="#48AD4C"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioButton
+        android:id="@+id/radioButtonNotSpecified"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FC0A0A0A"
+        android:buttonTint="#FFFFFF"
+        android:text="Not Specified"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/radioButtonMale"
+        app:layout_constraintStart_toStartOf="@+id/radioButtonMale"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonMale" />
+
+    <RadioButton
+        android:id="@+id/radioButtonFemale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FA0F0F0F"
+        android:backgroundTintMode="add"
+        android:buttonTint="#FCFFFFFF"
+        android:cursorVisible="true"
+        android:filterTouchesWhenObscured="false"
+        android:hapticFeedbackEnabled="true"
+        android:shadowColor="#F8FFFFFF"
+        android:text="Female"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#F7FFFFFF"
+        android:textColorHint="#F8FFFFFF"
+        android:textColorLink="#FAFFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/textViewGender"
+        app:layout_constraintStart_toStartOf="@+id/textViewGender"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGender" />
+
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="150dp"
+        android:background="#050505"
+        android:text="Gender"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCountry" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="150dp"
+        android:background="#F8FFFFFF"
+        android:ems="15"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FCFFFFFF"
+        android:ems="15"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#F5FFFFFF"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUsername"
+        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+
+    <Button
+        android:id="@+id/buttonChangePhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#4DCE53"
+        android:text="CHANGE PHOTO"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextName"
+        app:layout_constraintTop_toTopOf="@+id/editTextName"
+        app:layout_constraintVertical_bias="0.109"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <RadioButton
+        android:id="@+id/radioButtonMale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="#FFFFFF"
+        android:text="Male"
+        android:textColor="#FCFFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/radioButtonFemale"
+        app:layout_constraintStart_toStartOf="@+id/radioButtonFemale"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonFemale" />
+
+    <Button
+        android:id="@+id/buttonBirthDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
+        android:background="#FAFFFFFF"
+        android:text="Birth Date"
+        app:layout_constraintEnd_toEndOf="@+id/buttonChangePhoto"
+        app:layout_constraintStart_toStartOf="@+id/buttonChangePhoto"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChangePhoto" />
+
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewAge"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
+
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+
+        android:background="#FFFFFF"
+        android:hint="Age"
+        android:scrollbarSize="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonBirthDate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonBirthDate"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBirthDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
